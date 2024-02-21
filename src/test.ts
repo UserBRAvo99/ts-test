@@ -70,3 +70,37 @@ const user1: User = {
     email: 'alex.mail.com',
 }
 console.log(user1);
+
+// також мона порівнювати власні типи
+
+type Dog = {
+    name: string,
+    bark: boolean
+} 
+type Fish = {
+    name: string,
+    swimming: boolean
+} 
+
+const pet: Dog | Fish = {
+    name: 'Charly',
+    swimming: true
+}
+
+console.log(pet);
+
+// приклади формату поєднання типів - розширення
+
+type Status = {
+    status: string
+}
+
+type ExtentedUser = User & Status 
+
+const newUser: ExtentedUser = {
+    name: 'Lena',
+    email: 'lena@mail.com',
+    status: 'online'
+}
+
+console.log(newUser);
