@@ -104,3 +104,44 @@ const newUser: ExtentedUser = {
 }
 
 console.log(newUser);
+
+// інтерфейси
+//  при ініціаліцації інтерфейсу, в назві, потрібно спочатку написати І (IUser), скорочено від InterfaceUser (це робиться для подальшого розуміння що ми працюємо з інтерфейсом)
+//  інтерфейсу не можна надавати інші значення по типу interface IUser = Dog | Fish - він може бути тільки об'єктом
+// зазвичай інтерфейси використовуються в передачі пропсів (так як пропси приходять як об'єкт)
+
+interface IUser {
+    name: string,
+    age: number
+}
+//  із мінусів інтерфейсів,їх не можна розширити
+const interfaceUser: IUser = {
+    name: 'Lena',
+    age: 41,
+    isOpen: true
+}
+console.log(interfaceUser);
+
+// так робити не бажано, в такому випадку треба додати isOpen до всіх інтерфейсів
+interface IUser {
+    isOpen: boolean
+}
+//  розширити інтерфейси можна за допомогою наслідування, в такому випадку, розширений інтерфейс буде мати всі поля інтерфейсу який наслідується + свої власні
+interface ExtentedUserInterface extends IUser {
+    status: string
+}
+const newUser2: ExtentedUserInterface = {
+    name: 'Roma',
+    age: 30,
+    isOpen: false,
+    status: 'Offline'
+}
+console.log(newUser2);
+
+// функції
+// типізуємо функції
+const sum = (a:number, b:number) => {
+    console.log(a + b);
+}
+console.log(sum(42, 28));
+// якщо змінити тип аргументів то буде помилка console.log(sum(42, "28")), тому що друге значення буде string
