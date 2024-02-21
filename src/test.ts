@@ -36,21 +36,37 @@
 
 // також можна вказувати чітке значення для змінних за допомогою типізації
 // let greetings: 'hello' | 'bye' = 'hello'
+
 // умов може бути безліч, за допомогою знаку- |
 //  тобто змінна greetings прийме як валідне значення тільки 'hello' або 'bye' , в іншуму випадку буде помилка
 
 // типізація об'єктів
 // як і в змінних так і в об'єктах, якщо ми не типізуємо об'єкт або змінну, то ts присвоює типізацію автоматично при ініціалізації
-// const obj = {
-//     name: 'Robin',
-//     email: 'robin@mail.com',
-//     age: 33
-// }
+const obj = {
+    name: 'Robin',
+    email: 'robin@mail.com',
+    age: 33
+}
+console.log(obj);
+
 
 // оголошую тип(як змінну const, let) type
-// type User = {
-//     name: string,
-//     email: string,
-//     age: number,
-// }
-
+type User = {
+    name: string,
+    email: string,
+    age?: number,
+}
+// використовуємо кастомну типізацію для об'єкта
+const user: User = {
+    name: 'Alex',
+    email: 'alex.mail.com',
+    age: 30
+}
+console.log(user);
+// також можна зробити значення не обов'язковими за допомогою - ?
+// при додаванні знаку ? , поле age? стає не обов'язковим і це не виклие помилку
+const user1: User = {
+    name: 'Alex',
+    email: 'alex.mail.com',
+}
+console.log(user1);
