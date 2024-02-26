@@ -149,3 +149,4 @@ const sum = (a: number, b: number): number => {
 }
 console.log(sum(42, 28));
 // якщо змінити тип аргументів то буде помилка console.log(sum(42, "28")), тому що друге значення буде string
+// 
