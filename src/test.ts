@@ -148,5 +148,7 @@ const sum = (a: number, b: number): number => {
     return a + b
 }
 console.log(sum(42, 28));
+console.log(sum(43, +"28")); 
+//  + перед рядком, приводить до намбер
 // якщо змінити тип аргументів то буде помилка console.log(sum(42, "28")), тому що друге значення буде string
 // 
