@@ -1,6 +1,8 @@
 
 import { useState } from 'react'
 import './App.css'
+import UserCard from './components/UserCard/UserCard'
+import { UserList } from './components/UserList/UserList'
 
 function App() {
   // типізація стейту
@@ -13,8 +15,8 @@ function App() {
     e.preventDefault()
 
 
-    
-    setInput(e.currentTarget[0].value);
+
+    // setInput(e.currentTarget[0].value);
     
     e.currentTarget.reset()
   }
@@ -23,6 +25,18 @@ function App() {
   }
   const handleButtonClick = (e:React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     console.log(e.target);
+  }
+  const handleButtonClickButton = (id:number) => {
+    console.log(id);
+  }
+  // просто змінна для прикладу типізації
+  interface IUser {
+    name: string,
+    age: number
+}
+  const user:IUser = {
+    name: 'Roma',
+    age: 30
   }
 
   return (
@@ -34,8 +48,16 @@ function App() {
         </form>
         <button onClick={handleButtonClick}>Login</button>
       </div>
+      <div>
+        <UserCard user={user} message={'message'}  />
+      </div>
+      <div>
+        {/* розпилюю об'єкт в масив для штучної імітацію масиву юзеів(тут має бути масив різних данних для циклу і рендерингу) */}
+        <UserList user={[{...user},{...user}]} handleButtonClickButton={handleButtonClickButton}/>
+      </div>
     </>
   )
 }
 
 export default App
+
