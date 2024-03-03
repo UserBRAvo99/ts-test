@@ -63,3 +63,5 @@ function App() {
 
 export default App
 
+// @ts-ignore
+// можна написати над кодом, щоб ts не перевіряв код нище. це як вийняток
