@@ -5,6 +5,25 @@ import UserCard from './components/UserCard/UserCard'
 import { UserList } from './components/UserList/UserList'
 
 function App() {
+
+  
+  //  const reverseSeq = (n: number): number[] => {
+  // const arr = []
+  //    for (let i = 1; i <= n; i++) {
+  //      arr.unshift(i)
+  //    }
+  // return arr
+  //  };
+//   const reverseSeq = (n: number): number[] => {
+//   const arr = new Array(n);
+//   for (let i = 0; i < n; i++) {
+//     arr[i] = n - i;
+//   }
+//   return arr;
+// };
+  //   console.log(reverseSeq(1000000));
+  
+
   // типізація стейту
   // якщо стейт не типізувати, він автоматично запам'ятає тип при ініціалізації, тобто мжна не вказувати тип
   // або ж вказати, тим паче якщо треба типізувати декілька значень
